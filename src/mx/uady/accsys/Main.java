@@ -1,11 +1,7 @@
 package mx.uady.accsys;
 
 import mx.uady.accsys.model.bo.Consumable;
-import mx.uady.accsys.model.dao.ConsumableDao;
-
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Connection;
+import mx.uady.accsys.model.dataaccess.ConsumableDataaccess;
 
 /**
  * Created by cesar on 03/09/16.
@@ -20,7 +16,7 @@ public class Main {
         String description = "lava la ropa y la hace mas bonita";
         Consumable detergent = new Consumable(nombre,description);
 
-        ConsumableDao consumableDao = new ConsumableDao();
+        ConsumableDataaccess consumableDao = new ConsumableDataaccess();
         consumableDao.addConsumable(detergent);
 
     }

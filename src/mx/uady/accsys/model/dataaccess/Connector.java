@@ -1,4 +1,4 @@
-package mx.uady.accsys.model.dao;
+package mx.uady.accsys.model.dataaccess;
 
 import java.sql.DriverManager;
 import java.sql.SQLException;

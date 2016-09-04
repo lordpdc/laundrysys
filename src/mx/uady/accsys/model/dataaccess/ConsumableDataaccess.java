@@ -1,8 +1,7 @@
-package mx.uady.accsys.model.dao;
+package mx.uady.accsys.model.dataaccess;
 
 import mx.uady.accsys.model.bo.Consumable;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -11,11 +10,11 @@ import java.util.List;
 /**
  * Created by cesar on 03/09/16.
  */
-public class ConsumableDao implements IConsumableDao {
+public class ConsumableDataaccess implements IConsumableDao {
     List<Consumable> consumables;
     Connector connector = new Connector();
 
-    public ConsumableDao(){
+    public ConsumableDataaccess(){
         consumables = new ArrayList<Consumable>();
     }
 
