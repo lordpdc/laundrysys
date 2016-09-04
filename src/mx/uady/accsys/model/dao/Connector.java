@@ -1,8 +1,6 @@
 package mx.uady.accsys.model.dao;
 
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Connection;
+import java.sql.*;
 
 /**
  * Created by cesar on 03/09/16.
@@ -25,5 +23,39 @@ public class Connector {
 
     public Connection getConnection(){
         return conn;
+    }
+
+    public int executeStatement(String stmts){
+        Statement stmt = null;
+        int stat;
+        try {
+            stmt = conn.createStatement();
+            stat = stmt.executeUpdate(stmts);
+        }
+        catch (SQLException ex){
+            // handle any errors
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+            stat = -1;
+        }
+        return stat;
+    }
+
+    public ResultSet executeQuery(String query){
+        Statement stmt = null;
+        ResultSet rs;
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(query);
+        }
+        catch (SQLException ex){
+            // handle any errors
+            System.out.println("SQLException: " + ex.getMessage());
+            System.out.println("SQLState: " + ex.getSQLState());
+            System.out.println("VendorError: " + ex.getErrorCode());
+            rs = null;
+        }
+        return rs;
     }
 }

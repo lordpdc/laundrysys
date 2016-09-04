@@ -10,7 +10,8 @@ import java.util.List;
 public interface IConsumableDao {
     public List<Consumable> getAllConsumables();
     public Consumable getConsumable(int id);
+    public Consumable getConsumable(String name);
     public void updateConsumable(Consumable consumable);
     public void deleteConsumable(Consumable consumable);
-    public void addConsumable(Consumable consumable);
+    public int addConsumable(Consumable consumable);
 }
