@@ -1,4 +1,4 @@
-package mx.uady.accsys.model.dataaccess;
+package mx.uady.accsys.model.dao;
 
 import mx.uady.accsys.model.bo.Consumable;
 
@@ -10,11 +10,11 @@ import java.util.List;
 /**
  * Created by cesar on 03/09/16.
  */
-public class ConsumableDataaccess implements IConsumableDao {
+public class ConsumableDao implements IConsumableDao {
     List<Consumable> consumables;
     Connector connector = new Connector();
 
-    public ConsumableDataaccess(){
+    public ConsumableDao(){
         consumables = new ArrayList<Consumable>();
     }
 

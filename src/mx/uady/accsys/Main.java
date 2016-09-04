@@ -1,7 +1,7 @@
 package mx.uady.accsys;
 
 import mx.uady.accsys.model.bo.Consumable;
-import mx.uady.accsys.model.dataaccess.ConsumableDataaccess;
+import mx.uady.accsys.model.dao.ConsumableDao;
 
 /**
  * Created by cesar on 03/09/16.
@@ -16,7 +16,7 @@ public class Main {
         String description = "lava la ropa y la hace mas bonita";
         Consumable detergent = new Consumable(nombre,description);
 
-        ConsumableDataaccess consumableDao = new ConsumableDataaccess();
+        ConsumableDao consumableDao = new ConsumableDao();
         consumableDao.addConsumable(detergent);
 
     }

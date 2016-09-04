@@ -1,4 +1,4 @@
-package mx.uady.accsys.model.dataaccess;
+package mx.uady.accsys.model.dao;
 
 import mx.uady.accsys.model.bo.Consumable;
 
