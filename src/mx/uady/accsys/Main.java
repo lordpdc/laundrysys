@@ -9,6 +9,7 @@ import mx.uady.accsys.model.dao.ConsumableDao;
  */
 public class Main {
 
+    // esto deberia estar en un paquete de pruebas.
     public static void main(String[] args) {
 
         // Testing some stuff out
