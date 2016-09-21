@@ -8,7 +8,7 @@ import mx.uady.accsys.model.dao.ConsumableDao;
  * Created by cesar on 03/09/16.
  */
 public class Main {
-
+    // esto deberia estar en un paquete de pruebas.
     public static void main(String[] args) {
 
         // Testing some stuff out
@@ -21,7 +21,7 @@ public class Main {
         //consumableDao.addConsumable(detergent);
 
         Consumable myConsum = consumableDao.getConsumable(4);
-        System.out.println(myConsum.getName() + ": " + myConsum.getDescription());
+        System.out.println(myConsum.getName() + ": " + myConsum.getDescription());3
         System.out.println(" ------- LE CONSUS ------ ");
         for (Consumable consu : consumableDao.getAllConsumables()) {
             System.out.println(consu.getId()+": '"+consu.getName()+"', '"+consu.getDescription()+"'");
