@@ -1,6 +1,4 @@
-package mx.uady.accsys.model.bo;
-
-import java.sql.Connection;
+package business.entities;
 
 /**
  * Created by cesar on 03/09/16.

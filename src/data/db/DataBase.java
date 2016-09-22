@@ -1,20 +1,21 @@
-package mx.uady.accsys.model.dao;
+package data.db;
 
 import java.sql.*;
 
 /**
  * Created by cesar on 03/09/16.
  */
-public class Connector {
-    private static String url = "jdbc:mysql://localhost:3306/laundrysys";
-    private static String username = "root";
-    private static String password = "juancmonhey";
+public class DataBase {
+    private static String DBNAME = "laundrysys";
+    private static String URL = "jdbc:mysql://localhost:3306/"+DBNAME;
+    private static String USERNAME = "root";
+    private static String PASSWORD = "juancmonhey";
     private Connection conn = null;
 
-    public Connector(){
+    public DataBase(){
         System.out.println("Connecting database...");
         try {
-            conn = DriverManager.getConnection(url,username,password);
+            conn = DriverManager.getConnection(URL,USERNAME,PASSWORD);
             conn.createStatement();
         } catch (SQLException e) {
             e.printStackTrace();
