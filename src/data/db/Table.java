@@ -28,7 +28,7 @@ public class Table {
             while (rs.next()) {
                 Row row = new Row();
                 for (int i=1;i<=rsmd.getColumnCount();i++){
-                    row.addTuple(new Tuple<String,Object>(rsmd.getColumnName(i),rs.getObject(i)));
+                    row.addTuple(new Tuple<Object>(rsmd.getColumnName(i),rs.getObject(i)));
                 }
                 rows.add(row);
             }
@@ -48,7 +48,7 @@ public class Table {
             rsmd = rs.getMetaData();
             if (rs.next()) {
                 for (int i = 1; i <= rsmd.getColumnCount(); i++) {
-                    row.addTuple(new Tuple<String, Object>(rsmd.getColumnName(i), rs.getObject(i)));
+                    row.addTuple(new Tuple<Object>(rsmd.getColumnName(i), rs.getObject(i)));
                 }
             }
         } catch (SQLException e) {
