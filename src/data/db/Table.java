@@ -14,6 +14,7 @@ public class Table {
     private DataBase db;
 
     public Table(String name){
+        System.out.println(this.toString());
         this.name = name;
         db = new DataBase();
     }
@@ -62,7 +63,7 @@ public class Table {
         String strValues = "";
         for(Tuple param: params){
             strKeys += param.getKey()+",";
-            strValues +=param.getValue()+",";
+            strValues +="'"+param.getValue()+"',";
         }
         if (strKeys.charAt(strKeys.length() - 1)==','){
             strKeys = strKeys.substring(0, strKeys.length()-1);
