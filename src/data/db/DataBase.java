@@ -1,29 +1,11 @@
 package data.db;
 
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
-import javax.sql.DataSource;
 import java.sql.*;
 
 /**
  * Created by cesar on 03/09/16.
  */
 public class DataBase {
-    private static DataSource dataSource;
-    /*
-    static {
-        try {
-            dataSource = new InitialContext().lookup("jndifordbconc");
-        }
-        catch (NamingException e) {
-            throw new ExceptionInInitializerError("'jndifordbconc' not found in JNDI", e);
-        }
-    }
-
-    public static Connection getConnection() {
-        return dataSource.getConnection();
-    }*/
-
     private static String DBNAME = "laundrysys";
     private static String URL = "jdbc:mysql://localhost:3306/"+DBNAME;
     private static String USERNAME = "root";
