@@ -5,14 +5,14 @@ import java.sql.*;
 /**
  * Created by cesar on 03/09/16.
  */
-public class connectorDataBase {
+public class Connector {
     private static String DB_NAME = "laundrysys";
     private static String URL = "jdbc:mysql://localhost:3306/"+ DB_NAME;
     private static String USERNAME = "root";
     private static String PASSWORD = "";
     private Connection conn = null;
 
-    public connectorDataBase(){
+    public Connector(){
         System.out.println("Connecting database...");
         try {
             conn = DriverManager.getConnection(URL,USERNAME,PASSWORD);

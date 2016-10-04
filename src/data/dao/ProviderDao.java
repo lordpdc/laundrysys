@@ -15,7 +15,7 @@ public class ProviderDao implements Dao<Provider2,Integer>{
     private Table table;
 
     public ProviderDao(){
-        table = new Table("Provider2");
+        table = new Table("Provider");
         System.out.println(this.toString());
     }
 
