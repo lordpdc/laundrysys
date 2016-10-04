@@ -40,7 +40,7 @@ public class invoicePurchaseDAO implements Dao<invoicePurchase,Integer>{
         invoicePurchase invoicePurchase = new invoicePurchase();
 
         for (Tuple tup: row.getTuples()){
-            String key=(String) tup.getKey();
+            String key= tup.getKey();
             Object value=tup.getValue();
             switch (key){
                 case "id":
