@@ -24,5 +24,4 @@ public class Row {
     public void addTuple(Tuple tuple){
         this.tuples.add(tuple);
     }
-
 }
