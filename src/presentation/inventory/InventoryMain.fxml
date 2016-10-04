@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane fx:controller="presentation.inventory.InventoryMainCtrl" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+  <tabs>
+    <Tab text="Proveedores">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Button layoutX="526.0" layoutY="14.0" mnemonicParsing="false" text="buscar" />
+                  <TextField fx:id="providerSearchField" layoutX="359.0" layoutY="14.0" promptText="id, nombre" />
+                  <TableView fx:id="providersTable" layoutX="13.0" layoutY="50.0" prefHeight="305.0" prefWidth="574.0">
+                    <columns>
+                      <TableColumn fx:id="providerId" id="provider_id" prefWidth="49.0" text="id" />
+                      <TableColumn fx:id="providerName" id="provider_name" prefWidth="136.0" text="nombre" />
+                        <TableColumn fx:id="providerPhone" id="provider_phone" prefWidth="121.0" text="teléfono" />
+                        <TableColumn fx:id="providerAddress" id="provider_address" prefWidth="172.0" text="dirección" />
+                        <TableColumn fx:id="providerEmail" prefWidth="95.0" text="email" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="registerButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="registrar" />
+               </children>
+        </AnchorPane>
+      </content>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+    </Tab>
+      <Tab text="Facturas">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView layoutX="15.0" layoutY="50.0" prefHeight="303.0" prefWidth="570.0">
+                    <columns>
+                      <TableColumn prefWidth="41.0" text="id" />
+                      <TableColumn prefWidth="217.0" text="proveedor" />
+                        <TableColumn prefWidth="191.0" text="fecha emisión" />
+                        <TableColumn minWidth="3.0" prefWidth="94.0" text="total" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="15.0" layoutY="14.0" mnemonicParsing="false" text="facturar" />
+                  <TextField layoutX="359.0" layoutY="14.0" promptText="proveedor, fecha" />
+                  <Button layoutX="526.0" layoutY="14.0" mnemonicParsing="false" text="buscar" />
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+    <Tab text="Insumos">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="registrar" />
+                  <Button layoutX="527.0" layoutY="14.0" mnemonicParsing="false" text="buscar" />
+                  <TextField layoutX="360.0" layoutY="14.0" promptText="id, nombre" />
+                  <TableView layoutX="14.0" layoutY="50.0" prefHeight="305.0" prefWidth="573.0">
+                    <columns>
+                      <TableColumn prefWidth="49.0" text="id" />
+                      <TableColumn prefWidth="155.0" text="nombre" />
+                        <TableColumn prefWidth="277.0" text="descripción" />
+                        <TableColumn prefWidth="91.0" text="precio" />
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>

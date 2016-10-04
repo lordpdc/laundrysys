@@ -21,9 +21,9 @@ public class UserDao implements Dao<User,Integer> {
     @Override
     public int create(User user) {
         List<Tuple> userTuples = new ArrayList<>();
-        userTuples.add(new Tuple<String,String>("username",user.getUsername()));
-        userTuples.add(new Tuple<String,String>("password",user.getPassword()));
-        userTuples.add(new Tuple<String,Integer>("permission_lvl",user.getPermissionLvl()));
+        userTuples.add(new Tuple<String>("username",user.getUsername()));
+        userTuples.add(new Tuple<String>("password",user.getPassword()));
+        userTuples.add(new Tuple<Integer>("permission_lvl",user.getPermissionLvl()));
 
         return userTable.addRow(userTuples);
     }
@@ -77,4 +77,5 @@ public class UserDao implements Dao<User,Integer> {
     public void delete(User user) {
 
     }
+
 }

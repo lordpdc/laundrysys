@@ -25,8 +25,8 @@ public class ConsumableDao implements Dao<Consumable,Integer> {
     @Override
     public int create(Consumable consumable) {
         List<Tuple> consumableTuple = new ArrayList<>();
-        consumableTuple.add(new Tuple<String,String>("name",consumable.getName()));
-        consumableTuple.add(new Tuple<String,String>("description",consumable.getDescription()));
+        consumableTuple.add(new Tuple<String>("name",consumable.getName()));
+        consumableTuple.add(new Tuple<String>("description",consumable.getDescription()));
 
         return consumableTable.addRow(consumableTuple);
     }
@@ -37,15 +37,20 @@ public class ConsumableDao implements Dao<Consumable,Integer> {
         Consumable consumable = new Consumable();
 
         for (Tuple tup: row.getTuples()){
-            if (tup.getKey().equals("id")){
-                consumable.setId((Integer) tup.getValue());
-            }else if(tup.getKey().equals("name")){
-                consumable.setName((String) tup.getValue());
-            }else if(tup.getKey().equals("description")) {
-                consumable.setDescription((String) tup.getValue());
+            switch (tup.getKey()){
+                case "id":
+                    consumable.setId((Integer) tup.getValue());
+                    break;
+                case "name":
+                    consumable.setName((String) tup.getValue());
+                    break;
+                case "description":
+                    consumable.setDescription((String) tup.getValue());
+                    break;
+                default:
+                    break;
             }
         }
-
         return consumable;
     }
 
@@ -54,20 +59,25 @@ public class ConsumableDao implements Dao<Consumable,Integer> {
         List<Row> rows = consumableTable.getAllRows();
         List<Consumable> consumables = new ArrayList<>();
 
-        for (Row row: rows){
+        for (Row row : rows) {
             Consumable consumable = new Consumable();
-            for (Tuple tup: row.getTuples()){
-                if (tup.getKey().equals("id")){
-                    consumable.setId((Integer) tup.getValue());
-                }else if(tup.getKey().equals("name")){
-                    consumable.setName((String) tup.getValue());
-                }else if(tup.getKey().equals("description")) {
-                    consumable.setDescription((String) tup.getValue());
+            for (Tuple tup : row.getTuples()) {
+                switch (tup.getKey()) {
+                    case "id":
+                        consumable.setId((Integer) tup.getValue());
+                        break;
+                    case "name":
+                        consumable.setName((String) tup.getValue());
+                        break;
+                    case "description":
+                        consumable.setDescription((String) tup.getValue());
+                        break;
+                    default:
+                        break;
                 }
             }
             consumables.add(consumable);
         }
-
         return consumables;
     }
 
