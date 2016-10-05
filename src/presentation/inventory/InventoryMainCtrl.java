@@ -1,6 +1,6 @@
 package presentation.inventory;
 
-import business.entities.Provider2;
+import business.entities.Provider;
 import data.dao.ProviderDao;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -28,11 +28,11 @@ import java.util.*;
 public class InventoryMainCtrl implements Initializable{
     private ProviderDao dao;
     private JFrame registerProvider;
-    private ObservableList<Provider2> data;
+    private ObservableList<Provider> data;
 
     @FXML private TextField providerSearchField;
     @FXML private Button registerButton;
-    @FXML private TableView<Provider2> providersTable;
+    @FXML private TableView<Provider> providersTable;
     @FXML private TableColumn providerId;
     @FXML private TableColumn providerName;
     @FXML private TableColumn providerPhone;
@@ -48,18 +48,18 @@ public class InventoryMainCtrl implements Initializable{
 
     }
 
-    public void updateObsList(Provider2 p){
+    public void updateObsList(Provider p){
         data.add(p);
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        providerId.setCellValueFactory(new PropertyValueFactory<Provider2,String>("id"));
-        providerName.setCellValueFactory(new PropertyValueFactory<Provider2,String>("name"));
-        providerAddress.setCellValueFactory(new PropertyValueFactory<Provider2,String>("address"));
-        providerPhone.setCellValueFactory(new PropertyValueFactory<Provider2,String>("phoneNumber"));
-        providerEmail.setCellValueFactory(new PropertyValueFactory<Provider2,String>("email"));
+        providerId.setCellValueFactory(new PropertyValueFactory<Provider,String>("id"));
+        providerName.setCellValueFactory(new PropertyValueFactory<Provider,String>("name"));
+        providerAddress.setCellValueFactory(new PropertyValueFactory<Provider,String>("address"));
+        providerPhone.setCellValueFactory(new PropertyValueFactory<Provider,String>("phoneNumber"));
+        providerEmail.setCellValueFactory(new PropertyValueFactory<Provider,String>("email"));
 
         providersTable.setItems(data);
 

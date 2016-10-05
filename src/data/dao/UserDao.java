@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by cesar on 20/09/16.
  */
-public class UserDao implements Dao<User,Integer> {
+public class UserDao implements Dao<User> {
     private Table userTable;
 
     public UserDao(){
@@ -29,10 +29,10 @@ public class UserDao implements Dao<User,Integer> {
     }
 
     @Override
-    public User read(Integer id) {
+    public User read(int id) {
         Row row = userTable.getRow(id);
         User user = new User();
-        for (Tuple tup: row.getTuples()){
+        for (Tuple tup: row.getRow()){
             if (tup.getKey().equals("id")){
                 user.setId((Integer) tup.getValue());
             }else if(tup.getKey().equals("username")){
@@ -52,7 +52,7 @@ public class UserDao implements Dao<User,Integer> {
         List<User> users = new ArrayList<>();
         for (Row row: rows){
             User user = new User();
-            for (Tuple tup: row.getTuples()){
+            for (Tuple tup: row.getRow()){
                 if (tup.getKey().equals("id")){
                     user.setId((Integer) tup.getValue());
                 }else if(tup.getKey().equals("username")){
@@ -69,13 +69,13 @@ public class UserDao implements Dao<User,Integer> {
     }
 
     @Override
-    public int update(User user) {
+    public int update(int index, User user) {
         return 0;
     }
 
     @Override
-    public void delete(User user) {
-
+    public int delete(int user) {
+        return -1;
     }
 
 }
