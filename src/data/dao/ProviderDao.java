@@ -1,15 +1,16 @@
 package data.dao;
 
 import business.entities.Provider;
-import data.db.Table;
 
 /**
  * Created by cesar on 02/10/16.
  */
 public class ProviderDao extends GenericDao<Provider> implements Dao<Provider>{
+    private static final String entityClassName = "business.entities.Provider";
+    private static final String tableName = "Provider";
 
     public ProviderDao(){
-        super("business.entities.Provider","Provider");
+        super(entityClassName,tableName);
         System.out.println(this.toString());
     }
 }
