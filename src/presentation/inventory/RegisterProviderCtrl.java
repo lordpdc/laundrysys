@@ -1,6 +1,6 @@
 package presentation.inventory;
 
-import business.entities.Provider2;
+import business.entities.Provider;
 import data.dao.ProviderDao;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -44,7 +44,7 @@ public class RegisterProviderCtrl implements Initializable {
     }
 
     private void save(String name, String address, String phone, String email){
-        Provider2 provider = new Provider2(name,address,phone,email);
+        Provider provider = new Provider(name,address,phone,email);
         System.out.println(providerDao.create(provider));
     }
 

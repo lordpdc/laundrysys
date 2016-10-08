@@ -6,14 +6,14 @@ import java.util.List;
 /**
  * Created by cesar on 20/09/16.
  */
-public class Row {
+public class Row{
     List<Tuple> tuples;
 
     public Row(){
         tuples = new ArrayList<>();
     }
 
-    public List<Tuple> getTuples() {
+    public List<Tuple> getRow() {
         return tuples;
     }
 
@@ -24,5 +24,4 @@ public class Row {
     public void addTuple(Tuple tuple){
         this.tuples.add(tuple);
     }
-
 }

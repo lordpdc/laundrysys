@@ -1,5 +1,6 @@
 package data.db;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -11,12 +12,12 @@ import java.util.List;
  */
 public class Table {
     private String name;
-    private DataBase db;
+    private Connector db;
 
     public Table(String name){
         System.out.println(this.toString());
         this.name = name;
-        db = new DataBase();
+        db = new Connector();
     }
 
     public List<Row> getAllRows(){

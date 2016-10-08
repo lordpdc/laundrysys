@@ -1,21 +1,23 @@
 package business.entities;
 
+import java.lang.reflect.Field;
+
 /**
  * Created by cesar on 01/10/16.
  */
-public class Provider2 {
+public class Provider {
     private int id;
     private String name;
     private String address;
-    private String phoneNumber;
+    private String phone_number;
     private String email;
 
-    public Provider2(){}
+    public Provider(){}
 
-    public Provider2(String name, String address, String phoneNumber, String email){
+    public Provider(String name, String address, String phone_number, String email){
         this.name=name;
         this.address=address;
-        this.phoneNumber=phoneNumber;
+        this.phone_number=phone_number;
         this.email=email;
     }
 
@@ -28,11 +30,11 @@ public class Provider2 {
     }
 
     public String getPhoneNumber() {
-        return phoneNumber;
+        return phone_number;
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+        this.phone_number = phoneNumber;
     }
 
     public String getAddress() {
