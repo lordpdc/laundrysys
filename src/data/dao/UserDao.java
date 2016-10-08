@@ -1,80 +1,16 @@
 package data.dao;
 
-import data.db.Row;
-import data.db.Table;
-import data.db.Tuple;
 import business.entities.User;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by cesar on 20/09/16.
  */
-public class UserDao implements Dao<User,Integer> {
-    private Table userTable;
+public class UserDao extends GenericDao<User> implements Dao<User> {
+    private static final String entityClassName = "business.entities.User";
+    private static final String tableName = "user";
 
     public UserDao(){
-        userTable = new Table("user");
+        super(entityClassName,tableName);
     }
 
-    @Override
-    public int create(User user) {
-        List<Tuple> userTuples = new ArrayList<>();
-        userTuples.add(new Tuple<String,String>("username",user.getUsername()));
-        userTuples.add(new Tuple<String,String>("password",user.getPassword()));
-        userTuples.add(new Tuple<String,Integer>("permission_lvl",user.getPermissionLvl()));
-
-        return userTable.addRow(userTuples);
-    }
-
-    @Override
-    public User read(Integer id) {
-        Row row = userTable.getRow(id);
-        User user = new User();
-        for (Tuple tup: row.getTuples()){
-            if (tup.getKey().equals("id")){
-                user.setId((Integer) tup.getValue());
-            }else if(tup.getKey().equals("username")){
-                user.setUsername((String) tup.getValue());
-            }else if(tup.getKey().equals("password")){
-                user.setPassword((String) tup.getValue());
-            }else if(tup.getKey().equals("permission_lvl")){
-                user.setPermissionLvl((int)(long) tup.getValue());
-            }
-        }
-        return user;
-    }
-
-    @Override
-    public List<User> readAll() {
-        List<Row> rows = userTable.getAllRows();
-        List<User> users = new ArrayList<>();
-        for (Row row: rows){
-            User user = new User();
-            for (Tuple tup: row.getTuples()){
-                if (tup.getKey().equals("id")){
-                    user.setId((Integer) tup.getValue());
-                }else if(tup.getKey().equals("username")){
-                    user.setUsername((String) tup.getValue());
-                }else if(tup.getKey().equals("password")){
-                    user.setPassword((String) tup.getValue());
-                }else if(tup.getKey().equals("permission_lvl")){
-                    user.setPermissionLvl((int)(long) tup.getValue());
-                }
-            }
-            users.add(user);
-        }
-        return users;
-    }
-
-    @Override
-    public int update(User user) {
-        return 0;
-    }
-
-    @Override
-    public void delete(User user) {
-
-    }
 }

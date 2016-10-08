@@ -1,5 +1,6 @@
 package data.db;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -11,11 +12,12 @@ import java.util.List;
  */
 public class Table {
     private String name;
-    private DataBase db;
+    private Connector db;
 
     public Table(String name){
+        System.out.println(this.toString());
         this.name = name;
-        db = new DataBase();
+        db = new Connector();
     }
 
     public List<Row> getAllRows(){
@@ -28,7 +30,7 @@ public class Table {
             while (rs.next()) {
                 Row row = new Row();
                 for (int i=1;i<=rsmd.getColumnCount();i++){
-                    row.addTuple(new Tuple<String,Object>(rsmd.getColumnName(i),rs.getObject(i)));
+                    row.addTuple(new Tuple<Object>(rsmd.getColumnName(i),rs.getObject(i)));
                 }
                 rows.add(row);
             }
@@ -48,7 +50,7 @@ public class Table {
             rsmd = rs.getMetaData();
             if (rs.next()) {
                 for (int i = 1; i <= rsmd.getColumnCount(); i++) {
-                    row.addTuple(new Tuple<String, Object>(rsmd.getColumnName(i), rs.getObject(i)));
+                    row.addTuple(new Tuple<Object>(rsmd.getColumnName(i), rs.getObject(i)));
                 }
             }
         } catch (SQLException e) {
@@ -62,7 +64,7 @@ public class Table {
         String strValues = "";
         for(Tuple param: params){
             strKeys += param.getKey()+",";
-            strValues +=param.getValue()+",";
+            strValues +="'"+param.getValue()+"',";
         }
         if (strKeys.charAt(strKeys.length() - 1)==','){
             strKeys = strKeys.substring(0, strKeys.length()-1);
