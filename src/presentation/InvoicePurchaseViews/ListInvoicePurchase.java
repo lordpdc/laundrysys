@@ -1,11 +1,11 @@
-package presentation.InvoicePurchase;
+package presentation.InvoicePurchaseViews;
 
 import javax.swing.*;
 
 /**
  * Created by raoman on 09/10/2016.
  */
-public class ListInvoicePurchase {
+public class ListInvoicePurchase extends JFrame{
     private JTable tbContent;
     private JLabel lbTitle;
     private JButton btAdd;
@@ -14,13 +14,21 @@ public class ListInvoicePurchase {
 
     public ListInvoicePurchase() {
         createUIComponents();
-        addValueComponents();
+        setTextComponents();
+        setCustomPropertyComponent();
+
     }
 
     private void createUIComponents() {
         // TODO: place custom component creation code here
     }
-    private void addValueComponents(){
+    private void setTextComponents(){
+        lbTitle.setText(StringInvoicePurchase.TITLE);
+        btAdd.setText(StringInvoicePurchase.ADD);
+        btEdit.setText(StringInvoicePurchase.EDIT);
+        btDelete.setText(StringInvoicePurchase.DELETE);
+    }
+    private void setCustomPropertyComponent(){
 
     }
 }

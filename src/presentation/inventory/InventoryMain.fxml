@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<TabPane fx:controller="presentation.inventory.InventoryMainCtrl" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentation.inventory.InventoryMainCtrl">
   <tabs>
     <Tab text="Proveedores">
       <content>
@@ -14,10 +20,10 @@
                   <TextField fx:id="providerSearchField" layoutX="359.0" layoutY="14.0" promptText="id, nombre" />
                   <TableView fx:id="providersTable" layoutX="13.0" layoutY="50.0" prefHeight="305.0" prefWidth="574.0">
                     <columns>
-                      <TableColumn fx:id="providerId" id="provider_id" prefWidth="49.0" text="id" />
-                      <TableColumn fx:id="providerName" id="provider_name" prefWidth="136.0" text="nombre" />
-                        <TableColumn fx:id="providerPhone" id="provider_phone" prefWidth="121.0" text="teléfono" />
-                        <TableColumn fx:id="providerAddress" id="provider_address" prefWidth="172.0" text="dirección" />
+                      <TableColumn id="provider_id" fx:id="providerId" prefWidth="49.0" text="id" />
+                      <TableColumn id="provider_name" fx:id="providerName" prefWidth="136.0" text="nombre" />
+                        <TableColumn id="provider_phone" fx:id="providerPhone" prefWidth="121.0" text="teléfono" />
+                        <TableColumn id="provider_address" fx:id="providerAddress" prefWidth="172.0" text="dirección" />
                         <TableColumn fx:id="providerEmail" prefWidth="95.0" text="email" />
                     </columns>
                   </TableView>
@@ -32,6 +38,24 @@
               </items>
             </ContextMenu>
          </contextMenu>
+    </Tab>
+    <Tab text="Insumos">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="registrar" />
+                  <Button layoutX="527.0" layoutY="14.0" mnemonicParsing="false" text="buscar" />
+                  <TextField layoutX="360.0" layoutY="14.0" promptText="id, nombre" />
+                  <TableView layoutX="14.0" layoutY="50.0" prefHeight="305.0" prefWidth="573.0">
+                    <columns>
+                      <TableColumn prefWidth="49.0" text="id" />
+                      <TableColumn prefWidth="155.0" text="nombre" />
+                        <TableColumn prefWidth="277.0" text="descripción" />
+                        <TableColumn prefWidth="91.0" text="precio" />
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
+      </content>
     </Tab>
       <Tab text="Facturas">
         <content>
@@ -52,23 +76,5 @@
             </AnchorPane>
         </content>
       </Tab>
-    <Tab text="Insumos">
-      <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
-                  <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="registrar" />
-                  <Button layoutX="527.0" layoutY="14.0" mnemonicParsing="false" text="buscar" />
-                  <TextField layoutX="360.0" layoutY="14.0" promptText="id, nombre" />
-                  <TableView layoutX="14.0" layoutY="50.0" prefHeight="305.0" prefWidth="573.0">
-                    <columns>
-                      <TableColumn prefWidth="49.0" text="id" />
-                      <TableColumn prefWidth="155.0" text="nombre" />
-                        <TableColumn prefWidth="277.0" text="descripción" />
-                        <TableColumn prefWidth="91.0" text="precio" />
-                    </columns>
-                  </TableView>
-               </children></AnchorPane>
-      </content>
-    </Tab>
   </tabs>
 </TabPane>
