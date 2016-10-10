@@ -7,5 +7,4 @@ public class NullElements {
     public static final int INTEGER_NULL=0;
     public static final String STRING_NULL="";
 
-
 }

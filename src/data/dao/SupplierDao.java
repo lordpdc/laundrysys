@@ -17,14 +17,15 @@ import java.util.List;
  *
  * @author Luis
  */
-public class SupplierDao implements Dao<Supplier,Integer>{
+public class SupplierDao extends GenericDao<Supplier>{
     private Table supplierTable;
     
     public SupplierDao(){
+        super("","");
         supplierTable = new Table("supplier");
     }
     
-    
+    /*
     @Override
     public int create(Supplier supplier) {
         List<Tuple> supplierTuple = new ArrayList<>();
@@ -108,5 +109,5 @@ public class SupplierDao implements Dao<Supplier,Integer>{
     public void delete(Supplier supplier) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+    */
 }

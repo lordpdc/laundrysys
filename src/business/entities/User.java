@@ -7,21 +7,21 @@ public class User {
     private int id;
     private String username;
     private String password;
-    private int permissionLvl;
+    private int permission_lvl;
 
     public User(){}
 
     public User(String username, String password, int permissionLvl){
         this.username = username;
         this.password = password;
-        this.permissionLvl = permissionLvl;
+        this.permission_lvl = permissionLvl;
     }
 
     public User(int id, String username, String password, int permissionLvl){
         this.id = id;
         this.username = username;
         this.password = password;
-        this.permissionLvl = permissionLvl;
+        this.permission_lvl = permissionLvl;
     }
 
     public int getId() {
@@ -32,12 +32,12 @@ public class User {
         this.id = id;
     }
 
-    public int getPermissionLvl() {
-        return permissionLvl;
+    public int getPermission_lvl() {
+        return permission_lvl;
     }
 
-    public void setPermissionLvl(int permissionLvl) {
-        this.permissionLvl = permissionLvl;
+    public void setPermission_lvl(int permission_lvl) {
+        this.permission_lvl = permission_lvl;
     }
 
     public String getPassword() {

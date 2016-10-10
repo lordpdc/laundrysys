@@ -5,7 +5,7 @@ import business.entities.Provider;
 /**
  * Created by cesar on 02/10/16.
  */
-public class ProviderDao extends GenericDao<Provider> implements Dao<Provider>{
+public class ProviderDao extends GenericDao<Provider> {
     private static final String entityClassName = "business.entities.Provider";
     private static final String tableName = "Provider";
 
@@ -13,4 +13,5 @@ public class ProviderDao extends GenericDao<Provider> implements Dao<Provider>{
         super(entityClassName,tableName);
         System.out.println(this.toString());
     }
+
 }

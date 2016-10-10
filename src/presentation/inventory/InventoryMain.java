@@ -16,7 +16,7 @@ public class InventoryMain {
         JFrame frame = new JFrame("Inventario");
         final JFXPanel fxPanel = new JFXPanel();
         frame.add(fxPanel);
-        frame.setSize(600, 420);
+        frame.setSize(900, 640);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -27,7 +27,7 @@ public class InventoryMain {
                     frame.setVisible(true);
                     FXMLLoader loader = new FXMLLoader();
                     Parent root = loader.load(getClass().getResource("InventoryMain.fxml").openStream());
-                    Scene scene = new Scene(root, 600, 400);
+                    Scene scene = new Scene(root);
                     fxPanel.setScene(scene);
                     mainCtrl = loader.getController();
                 } catch (IOException e) {
