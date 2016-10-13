@@ -54,6 +54,7 @@ public class Inventory implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         providerId.setCellValueFactory(new PropertyValueFactory<Provider,String>("id"));
         providerName.setCellValueFactory(new PropertyValueFactory<Provider,String>("name"));
         providerAddress.setCellValueFactory(new PropertyValueFactory<Provider,String>("address"));
