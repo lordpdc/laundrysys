@@ -1,9 +1,8 @@
-package business.Administrator;
+package business.administrator;
 
 import business.entities.InvoicePurchase;
 import data.dao.InvoicePurchaseDAO;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,6 +22,7 @@ public class AdministratoInvoicePurchase {
     public void remove(int id){
         invoicePurchaseDAO.delete(id);
     }
+
     public InvoicePurchase search(int id){
         return invoicePurchaseDAO.read(id);
     }
@@ -30,4 +30,5 @@ public class AdministratoInvoicePurchase {
     public List<InvoicePurchase> seeAll(){
         return invoicePurchaseDAO.readAll();
     }
+
 }

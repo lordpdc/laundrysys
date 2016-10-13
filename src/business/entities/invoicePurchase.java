@@ -5,7 +5,7 @@ import java.sql.Date;
 /**
  * Created by raoman on 01/10/2016.
  */
-public class invoicePurchase {
+public class InvoicePurchase {
     private int id;
     private int idSupplier;
     private Date date;
@@ -42,4 +42,5 @@ public class invoicePurchase {
     public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
     }
+
 }

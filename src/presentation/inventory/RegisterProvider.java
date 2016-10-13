@@ -17,10 +17,10 @@ import java.util.ResourceBundle;
 /**
  * Created by cesar on 01/10/16.
  */
-public class RegisterProviderCtrl implements Initializable {
+public class RegisterProvider implements Initializable {
     private JFrame frame;
     private ProviderDao providerDao;
-    private InventoryMainCtrl mainCtrl;
+    private Inventory mainCtrl;
 
     @FXML private TextField nameField;
     @FXML private TextField addressField;
@@ -30,7 +30,7 @@ public class RegisterProviderCtrl implements Initializable {
     @FXML private Button saveButton;
     @FXML private Button cancelButton;
 
-    public RegisterProviderCtrl(){
+    public RegisterProvider(){
         System.out.println(this.toString());
         providerDao = new ProviderDao();
     }
@@ -39,7 +39,7 @@ public class RegisterProviderCtrl implements Initializable {
         this.frame = frame;
     }
 
-    void setMainCtrl(InventoryMainCtrl main){
+    void setMainCtrl(Inventory main){
         this.mainCtrl = main;
     }
 

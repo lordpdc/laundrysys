@@ -25,7 +25,7 @@ import java.util.*;
 /**
  * Created by cesar on 01/10/16.
  */
-public class InventoryMainCtrl implements Initializable{
+public class Inventory implements Initializable{
     private ProviderDao dao;
     private JFrame registerProvider;
     private ObservableList<Provider> data;
@@ -39,9 +39,9 @@ public class InventoryMainCtrl implements Initializable{
     @FXML private TableColumn providerAddress;
     @FXML private TableColumn providerEmail;
 
-    private RegisterProviderCtrl saveDiag;
+    private RegisterProvider saveDiag;
 
-    public InventoryMainCtrl(){
+    public Inventory(){
         System.out.println(this.toString());
         dao = new ProviderDao();
         data = FXCollections.observableArrayList(dao.readAll());
@@ -54,7 +54,6 @@ public class InventoryMainCtrl implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         providerId.setCellValueFactory(new PropertyValueFactory<Provider,String>("id"));
         providerName.setCellValueFactory(new PropertyValueFactory<Provider,String>("name"));
         providerAddress.setCellValueFactory(new PropertyValueFactory<Provider,String>("address"));
@@ -72,7 +71,8 @@ public class InventoryMainCtrl implements Initializable{
                 System.out.println(event.toString());
             }
         });
-        InventoryMainCtrl mua = this;
+
+        Inventory mua = this;
         registerButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -91,7 +91,7 @@ public class InventoryMainCtrl implements Initializable{
                                 Parent root = leLoder.load(getClass().getResource("RegisterProvider.fxml").openStream());
                                 Scene scene = new Scene(root, 600, 400);
                                 jfxPanel.setScene(scene);
-                                RegisterProviderCtrl actrl = leLoder.getController();
+                                RegisterProvider actrl = leLoder.getController();
                                 actrl.setFrame(registerProvider);
                                 actrl.setMainCtrl(mua);
                             } catch (IOException e) {
