@@ -9,10 +9,10 @@ import javafx.scene.Scene;
 import javax.swing.*;
 import java.io.IOException;
 
-public class InventoryMain {
+public class InventoryManager {
     private InventoryMainCtrl mainCtrl;
 
-    public InventoryMain() {
+    public InventoryManager() {
         JFrame frame = new JFrame("Inventario");
         final JFXPanel fxPanel = new JFXPanel();
         frame.add(fxPanel);
@@ -26,7 +26,7 @@ public class InventoryMain {
                 try {
                     frame.setVisible(true);
                     FXMLLoader loader = new FXMLLoader();
-                    Parent root = loader.load(getClass().getResource("InventoryMain.fxml").openStream());
+                    Parent root = loader.load(getClass().getResource("InventoryManager.fxml").openStream());
                     Scene scene = new Scene(root);
                     fxPanel.setScene(scene);
                     mainCtrl = loader.getController();
@@ -38,7 +38,7 @@ public class InventoryMain {
     }
 
     public static void main(String[] args) {
-        new InventoryMain();
+        new InventoryManager();
     }
 
 }

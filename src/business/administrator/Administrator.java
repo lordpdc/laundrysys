@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package business;
+package business.administrator;
 
 import data.dao.Dao;
 
@@ -13,8 +13,7 @@ import data.dao.Dao;
  */
 public abstract class Administrator {
     protected Dao element;
-    
-    
+
     public abstract void create(Object entiti);
     
     public abstract void delete(Object entiti);

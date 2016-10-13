@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package business;
+package business.administrator;
 
 import data.dao.SupplierDao;
 
@@ -11,7 +11,7 @@ import data.dao.SupplierDao;
  *
  * @author Luis
  */
-public class SupplierAdministrator /*extends Administrator*/ {
+public class SupplierAdministrator /*extends administrator*/ {
 
     /*
     public SupplierAdministrator(){

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package business;
+package business.administrator;
 
 import data.dao.CustomerDao;
 
@@ -11,7 +11,8 @@ import data.dao.CustomerDao;
  *
  * @author Luis
  */
-public class CustomerAdministrator /*extends Administrator */{
+public class CustomerAdministrator /*extends administrator */{
+
     /*
     public CustomerAdministrator(){
         element = new CustomerDao();
@@ -42,7 +43,5 @@ public class CustomerAdministrator /*extends Administrator */{
         element.readAll();
     }
     */
-    
-
     
 }
