@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 /**
  * Created by cesar on 01/10/16.
  */
-public class RegisterProvider implements Initializable {
+public class ProviderRegistration implements Initializable {
     private JFrame frame;
     private ProviderDao providerDao;
     private Inventory mainCtrl;
@@ -30,7 +30,7 @@ public class RegisterProvider implements Initializable {
     @FXML private Button saveButton;
     @FXML private Button cancelButton;
 
-    public RegisterProvider(){
+    public ProviderRegistration(){
         System.out.println(this.toString());
         providerDao = new ProviderDao();
     }

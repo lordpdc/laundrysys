@@ -1,7 +1,7 @@
 package tests;
 
-
 import presentation.gui.WindowManager;
+
 
 public class SystemTest {
 
@@ -9,7 +9,6 @@ public class SystemTest {
 
         WindowManager windowManager = new WindowManager();
         windowManager.showInventory();
-
 
     }
 
