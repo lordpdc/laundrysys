@@ -25,13 +25,23 @@ import java.util.*;
 /**
  * Created by cesar on 01/10/16.
  */
-public class InventoryMainCtrl implements Initializable{
+public class Inventory implements Initializable{
+
     private ProviderDao dao;
+
     private JFrame registerProvider;
+    private JFrame invoiceCaptureF;
+    private JFrame consumableRegistrationF;
+
     private ObservableList<Provider> data;
+
+    private ProviderRegistration saveDiag;
 
     @FXML private TextField providerSearchField;
     @FXML private Button registerButton;
+    @FXML private Button captureInvoice;
+    @FXML private Button registerConsumable;
+
     @FXML private TableView<Provider> providersTable;
     @FXML private TableColumn providerId;
     @FXML private TableColumn providerName;
@@ -39,13 +49,10 @@ public class InventoryMainCtrl implements Initializable{
     @FXML private TableColumn providerAddress;
     @FXML private TableColumn providerEmail;
 
-    private RegisterProviderCtrl saveDiag;
-
-    public InventoryMainCtrl(){
+    public Inventory(){
         System.out.println(this.toString());
         dao = new ProviderDao();
         data = FXCollections.observableArrayList(dao.readAll());
-
     }
 
     public void updateObsList(Provider p){
@@ -54,7 +61,6 @@ public class InventoryMainCtrl implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         providerId.setCellValueFactory(new PropertyValueFactory<Provider,String>("id"));
         providerName.setCellValueFactory(new PropertyValueFactory<Provider,String>("name"));
         providerAddress.setCellValueFactory(new PropertyValueFactory<Provider,String>("address"));
@@ -72,7 +78,8 @@ public class InventoryMainCtrl implements Initializable{
                 System.out.println(event.toString());
             }
         });
-        InventoryMainCtrl mua = this;
+
+        Inventory mua = this;
         registerButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -88,10 +95,10 @@ public class InventoryMainCtrl implements Initializable{
                             try {
                                 registerProvider.setVisible(true);
                                 FXMLLoader leLoder = new FXMLLoader();
-                                Parent root = leLoder.load(getClass().getResource("RegisterProvider.fxml").openStream());
+                                Parent root = leLoder.load(getClass().getResource("ProviderRegistration.fxml").openStream());
                                 Scene scene = new Scene(root, 600, 400);
                                 jfxPanel.setScene(scene);
-                                RegisterProviderCtrl actrl = leLoder.getController();
+                                ProviderRegistration actrl = leLoder.getController();
                                 actrl.setFrame(registerProvider);
                                 actrl.setMainCtrl(mua);
                             } catch (IOException e) {
@@ -101,6 +108,17 @@ public class InventoryMainCtrl implements Initializable{
                     });
                 }else{
                     registerProvider.setVisible(true);
+                }
+            }
+        });
+
+        registerConsumable.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                if (registerConsumable==null){
+
+                }else{
+
                 }
             }
         });
