@@ -46,6 +46,7 @@ public class RegisterProviderCtrl implements Initializable {
     private void save(String name, String address, String phone, String email){
         Provider provider = new Provider(name,address,phone,email);
         System.out.println(providerDao.create(provider));
+        mainCtrl.updateObsList(provider);
     }
 
     @Override

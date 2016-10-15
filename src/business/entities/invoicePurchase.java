@@ -5,7 +5,7 @@ import java.sql.Date;
 /**
  * Created by raoman on 01/10/2016.
  */
-public class InvoicePurchase {
+public class invoicePurchase {
     private int id;
     private int idSupplier;
     private Date date;

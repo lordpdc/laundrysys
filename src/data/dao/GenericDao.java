@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by cesar on 04/10/16.
  */
-public class GenericDao<T> implements Dao<T>{
+public class GenericDao<T> implements Dao<T> {
     private String className;
     private Table table;
 
@@ -20,8 +20,8 @@ public class GenericDao<T> implements Dao<T>{
         table = new Table(tableName);
     }
 
-    @Override
     @SuppressWarnings("unchecked")
+    @Override
     public <V> int create(T t) {
         List<Tuple> tuples = new ArrayList<>();
         Class<?> clazz = t.getClass();
@@ -65,12 +65,14 @@ public class GenericDao<T> implements Dao<T>{
         List<T> entities = new ArrayList<>();
 
         for (Row row : rows) {
+
             Class<?> clazz = null;
             try {
-                clazz = clazz = Class.forName(className);
+                clazz = Class.forName(className);
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
+
             T instance = null;
             try {
                 assert clazz != null;
@@ -78,11 +80,14 @@ public class GenericDao<T> implements Dao<T>{
             } catch (InstantiationException | IllegalAccessException e) {
                 e.printStackTrace();
             }
+
             for (Tuple tup : row.getRow()) {
                 setField(instance,tup.getKey(),tup.getValue());
             }
+
             entities.add(instance);
         }
+
         return entities;
     }
 
@@ -116,6 +121,7 @@ public class GenericDao<T> implements Dao<T>{
     @SuppressWarnings("unchecked")
     private static <V> V getField(Object object, String fieldName) {
         Class<?> clazz = object.getClass();
+
         while (clazz != null) {
             try {
                 Field field = clazz.getDeclaredField(fieldName);
@@ -134,9 +140,11 @@ public class GenericDao<T> implements Dao<T>{
     private List<Field> getAllFields(Object object){
         List<Field> fields = new ArrayList<>();
         Class<?> clazz = object.getClass();
+
         for(int i=0;i<clazz.getDeclaredFields().length;i++){
             fields.add(clazz.getDeclaredFields()[i]);
         }
+
         return fields;
     }
 
