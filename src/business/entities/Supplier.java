@@ -5,7 +5,7 @@
  */
 package business.entities;
 
-import business.utilities.NullElements;
+import business.utilities.DefaultValues;
 
 /**
  *
@@ -15,30 +15,30 @@ public class Supplier {
     protected int id;
     protected String name;
     protected String address;
-    protected String phone;
-    protected String mail;
+    protected String phone_number;
+    protected String email;
     
     public Supplier(){
-        id= NullElements.INTEGER_NULL;
-        name= NullElements.STRING_NULL;
-        address = NullElements.STRING_NULL;
-        phone=NullElements.STRING_NULL;
-        mail=NullElements.STRING_NULL;
+        this.id= DefaultValues.INTEGER;
+        this.name= DefaultValues.STRING;
+        this.address = DefaultValues.STRING;
+        this.phone_number = DefaultValues.STRING;
+        this.email = DefaultValues.STRING;
     }
 
-    public Supplier(String name, String address, String phone, String mail){
+    public Supplier(String name, String address, String phone, String email){
         this.name = name;
         this.address = address;
-        this.phone = phone;
-        this.mail = mail;
+        this.phone_number = phone;
+        this.email = email;
     }
     
-    public Supplier(int id, String name, String address, String phone, String mail){
+    public Supplier(int id, String name, String address, String phone, String email){
         this.id = id;
         this.name = name;
         this.address = address;
-        this.phone = phone;
-        this.mail = mail;
+        this.phone_number = phone;
+        this.email = email;
     }
     
     /**
@@ -86,29 +86,29 @@ public class Supplier {
     /**
      * @return the phone
      */
-    public String getPhone() {
-        return phone;
+    public String getPhone_number() {
+        return phone_number;
     }
 
     /**
-     * @param phone the phone to set
+     * @param phone_number the phone to set
      */
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
     }
 
     /**
-     * @return the mail
+     * @return the email
      */
-    public String getMail() {
-        return mail;
+    public String getEmail() {
+        return email;
     }
 
     /**
-     * @param mail the mail to set
+     * @param email the mail to set
      */
-    public void setMail(String mail) {
-        this.mail = mail;
+    public void setEmail(String email) {
+        this.email = email;
     }
     
     

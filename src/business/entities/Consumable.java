@@ -1,5 +1,7 @@
 package business.entities;
 
+import business.utilities.DefaultValues;
+
 /**
  * Created by cesar on 03/09/16.
  */
@@ -9,7 +11,9 @@ public class Consumable {
     private String description;
 
     public Consumable(){
-        // TODO code here
+        this.id = DefaultValues.INTEGER;
+        this.name = DefaultValues.STRING;
+        this.description = DefaultValues.STRING;
     }
 
     public Consumable(String name, String description){

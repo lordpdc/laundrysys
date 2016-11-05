@@ -1,6 +1,6 @@
 package presentation.inventory;
 
-import business.entities.Provider;
+import business.entities.Supplier;
 import data.dao.ProviderDao;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -33,7 +33,7 @@ public class Inventory implements Initializable{
     private JFrame invoiceCaptureF;
     private JFrame consumableRegistrationF;
 
-    private ObservableList<Provider> data;
+    private ObservableList<Supplier> data;
 
     private ProviderRegistration saveDiag;
 
@@ -42,7 +42,7 @@ public class Inventory implements Initializable{
     @FXML private Button captureInvoice;
     @FXML private Button registerConsumable;
 
-    @FXML private TableView<Provider> providersTable;
+    @FXML private TableView<Supplier> providersTable;
     @FXML private TableColumn providerId;
     @FXML private TableColumn providerName;
     @FXML private TableColumn providerPhone;
@@ -55,17 +55,17 @@ public class Inventory implements Initializable{
         data = FXCollections.observableArrayList(dao.readAll());
     }
 
-    public void updateObsList(Provider p){
+    public void updateObsList(Supplier p){
         data.add(p);
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        providerId.setCellValueFactory(new PropertyValueFactory<Provider,String>("id"));
-        providerName.setCellValueFactory(new PropertyValueFactory<Provider,String>("name"));
-        providerAddress.setCellValueFactory(new PropertyValueFactory<Provider,String>("address"));
-        providerPhone.setCellValueFactory(new PropertyValueFactory<Provider,String>("phoneNumber"));
-        providerEmail.setCellValueFactory(new PropertyValueFactory<Provider,String>("email"));
+        providerId.setCellValueFactory(new PropertyValueFactory<Supplier,String>("id"));
+        providerName.setCellValueFactory(new PropertyValueFactory<Supplier,String>("name"));
+        providerAddress.setCellValueFactory(new PropertyValueFactory<Supplier,String>("address"));
+        providerPhone.setCellValueFactory(new PropertyValueFactory<Supplier,String>("phoneNumber"));
+        providerEmail.setCellValueFactory(new PropertyValueFactory<Supplier,String>("email"));
 
         providersTable.setItems(data);
 

@@ -1,6 +1,6 @@
 package business.entities;
 
-import business.utilities.NullElements;
+import business.utilities.DefaultValues;
 
 /**
  * Created by raoman on 21/09/2016.
@@ -12,10 +12,10 @@ public class Customer {
     private String mail;
 
     public Customer() {
-        id= NullElements.INTEGER_NULL;
-        name= NullElements.STRING_NULL;
-        phone=NullElements.STRING_NULL;
-        mail=NullElements.STRING_NULL;
+        this.id = DefaultValues.INTEGER;
+        this.name = DefaultValues.STRING;
+        this.phone = DefaultValues.STRING;
+        this.mail = DefaultValues.STRING;
     }
 
     public Customer(String name, String phone, String mail) {
